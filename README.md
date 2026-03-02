@@ -30,6 +30,6 @@ CSS – Styling and visual design
 
 JavaScript – Game logic, movement, collision detection, and score handling
 
-<br>
+
 <br>
 In this project, most of the CSS and JavaScript code is embedded directly within the HTML files using <style> and <script> tags. While separating concerns into different files is common in larger projects, this structure was intentionally used for simplicity and to align with the practicum requirements.
