@@ -34,6 +34,8 @@ JavaScript – Game logic, movement, collision detection, and score handling
 <br>
 In this project, most of the CSS and JavaScript code is embedded directly within the HTML files using <style> and <script> tags. While separating concerns into different files is common in larger projects, this structure was intentionally used for simplicity and to align with the practicum requirements.
 
+For the visual design of the game, I created custom background images using Adobe Illustrator. These images were crafted to enhance the aesthetic of the game board and give the Snake game a unique, polished look. By designing the backgrounds myself, I could control the color palette, patterns, and overall style, making the game feel more engaging and visually cohesive. 
+
 <br>
 
 # Preview Video of The Snake Game
