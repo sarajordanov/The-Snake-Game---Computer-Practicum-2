@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Athiti:wght@400;500&family=DotGothic16&family=Poppins:wght@300&display=swap">
+	<title>The Snake Game</title>
+
+<style type="text/css">		
+body {
+	background-color: #222831;
+	background-attachment: fixed; 
+	background-image: url('s.png');
+    background-repeat: no-repeat;
+}
+
+header {
+	position: fixed;
+	right: 0;
+	top: 0;
+	z-index: 2;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 33px 9%;
+	background: transparent;
+}
+
+.logo {
+	width: 1000px;
+	height: 5px;
+	position: absolute;
+	margin-left: 620px;
+}
+
+h1 {
+	line-height: 1;
+	font-family: 'DotGothic16', sans-serif;
+	letter-spacing: 5px;
+	font-size: 100px;
+	font-weight: 1500px;
+	text-decoration: none;
+	text-align: center;
+	color:white;
+	cursor: pointer;
+}
+
+p {
+	max-width: 100%;
+	width: 535px;
+	color: white;
+	line-height: 1.5;
+	letter-spacing: 4px;
+	font-family: 'DotGothic16', sans-serif;
+	text-align: center;
+	font-size: 23px;
+	margin-bottom: 20px;
+	margin-left: 250px;
+}
+
+.slide-in {
+	transform: translateY(-100%);
+    animation: slide-in 2s forwards;
+}
+
+@keyframes slide-in {
+  	0% {
+    	transform: translateY(-100%);
+  	}
+  	100% {
+    	transform: translateY(0);
+  	}
+} 
+
+.wrap {
+  	height: 100%;
+  	display: flex;
+  	align-items: center;
+  	justify-content: center;
+}
+
+.button {
+  	width: 170px;
+  	height: 60px;
+  	font-family: 'DotGothic16', sans-serif;
+  	font-size: 17px;
+  	font-weight: bold;
+  	text-transform: uppercase;
+  	letter-spacing: 2.5px;
+  	font-weight: 400px;
+  	color: white;
+  	background-color: unset;
+  	border: white solid 2px;
+  	border-radius: 45px;
+  	margin-top: 20px ;
+  	box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  	transition: all 0.3s ease 0s;
+  	cursor: pointer;
+  	outline: none;
+}
+
+.button:hover {
+  	background-color: #49f2d6;
+  	box-shadow: 0px 15px 20px rgba(76, 255, 215, 0.4);
+  	border: none;
+  	color: #222831;
+  	transform: translateY(-7px);
+}
+
+.align{
+	margin-top: 600px;
+}
+
+#scale1{
+	transform: scale(0);
+  	animation: scale-in 2s forwards;
+}
+
+@keyframes scale-in {
+  	0% {
+    	transform: scale(0);
+  	}
+  	100% {
+    	transform: scale(1);
+  	}
+}
+
+#scale2{
+	transform: scale(0);
+  	animation: scale-in 2s forwards;
+}
+
+@keyframes scale-in {
+  	0% {
+    	transform: scale(0);
+  	}
+  	100% {
+    	transform: scale(1);
+  	}
+}		
+</style>
+</head>
+<body>
+		<header>
+			<div class = "logo">
+
+				<h1 class="slide-in"> The <br> Snake Game</h1>
+				<p class="slide-in"  >Chase after the delicious candy but don't hit the wall, or eat your own tail. <br> <br> How long can you survive?</p>
+			</div>
+		</header>
+
+
+	
+
+		<div class="align">
+			<div class="wrap" id="scale1">
+				<a href="U.html">
+  				<button class="button"> Play </button>
+			</a>
+			</div>
+			
+			<div class="wrap" id="scale1">
+  				<a href="instruction.html">
+  				<button class="button"> Instruction</button>
+			</a>
+			</div>
+
+			
+		
+		</div>
+</body>
+</html>

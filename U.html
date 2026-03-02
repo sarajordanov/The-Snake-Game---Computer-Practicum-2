@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Athiti:wght@400;500&family=DotGothic16&family=Poppins:wght@300&display=swap">
+    <title>The Snake Game</title>
+<head>
+    <title>Snake Game</title>
+
+    <style>
+        body {
+    margin: 0;
+
+    background-color: #222831;
+    background-image: url('t.png');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+header {
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 2;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 9%;
+    background: transparent;
+}
+
+.logo {
+    width: 1000px;
+    height: 0;
+    position: absolute;
+    margin-left: 620px;     
+}
+
+h1{
+    line-height: 1;
+    font-family: 'DotGothic16', sans-serif;
+    letter-spacing: 5px;
+    font-size: 50px;
+    font-weight: 1500px;
+    text-decoration: none;
+    text-align: center;
+    color:white;
+    
+}
+
+h3 {
+    line-height: 1;
+    font-family: 'DotGothic16', sans-serif;
+    letter-spacing: 2px;
+    font-size: 35px;
+    font-weight: 1500px;
+    text-decoration: none;
+    text-align: center;
+    color:white;
+ }   
+
+.slide-in {
+    transform: translateY(-100%);
+    animation: slide-in 0.9s forwards;
+}
+
+@keyframes slide-in {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+} 
+
+#gameCanvas {
+    background-color:  #181825;
+    border: 20px solid #181825;
+    border-style: ridge;
+    color: #db3f24;
+    display: grid;
+    margin-top: 9%;
+    grid-template-rows: repeat(20, 5%);
+    grid-template-columns: repeat(50, 2%);
+}
+#scoreBoard {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+            background-color: #181825;
+            padding: 20px;
+            border: #49f2d6 solid 15px;
+            border-style: ridge;
+            color: white;
+            font-family: 'DotGothic16', sans-serif;
+            align-items: center;
+
+
+transform: scale(0);
+    animation: scale-in 1s forwards;
+}
+
+
+#scoreBoard span {
+    margin-right: 10px;
+}
+
+@keyframes scale-in {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+
+}
+
+
+.wrap {
+    height: 100%;
+    display: flex;
+    align: left;
+    justify-content: center;
+}
+
+.button {
+    position: fixed;
+    bottom: 50px;
+    left: 100px;
+    width: 280px;
+    height: 60px;
+    font-family: 'DotGothic16', sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 400px;
+    color: white;
+    background-color:#222831;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+}
+
+.button:hover {
+    background-color: #222831;
+    text-shadow: 0px 15px 20px rgba(76, 255, 215, 0.4);
+    color: #49f2d6;
+    transform: translateY(-7px);
+}
+
+
+#pauseButton {
+     position: fixed;
+    bottom: 50px;
+    center: 50px;
+    width: 280px;
+    height: 60px;
+    font-family: 'DotGothic16', sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 400px;
+    color: white;
+    background-color:#222831;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+}
+
+#pauseButton:hover {
+background-color: #222831;
+    text-shadow: 0px 15px 20px rgba(76, 255, 215, 0.4);
+    color: #49f2d6;
+    transform: translateY(-7px);
+    }
+
+button{
+    transform: scale(0);
+    animation: scale-in 1s forwards;
+}
+
+@keyframes scale-in {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+canvas{
+    transform: scale(0);
+    animation: scale-in 1s forwards;
+}
+
+@keyframes scale-in {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+
+}
+    </style>
+
+</head>
+<body>
+
+
+    <header>
+            <div class = "logo">
+                <h1 class="slide-in"> Are You Ready? <br> <h3>Be careful not to crash!<h3></h1>
+            </div>
+    </header>
+    
+    <canvas id="gameCanvas" width="640" height="480"></canvas>
+
+    <div id="scoreBoard">
+        <span>Score: </span>
+        <span id="score">0</span>
+        <span>High Score: </span>
+        <span id="highScore">0</span>
+    </div>
+
+    <div class="wrap">
+        <a href="title.html">
+            <button class="button"> <- Go back </button>
+        </a>
+    </div>
+
+    <button id="pauseButton">Pause</button>
+
+
+    <script>
+        // Initialize the game
+        var canvas = document.getElementById("gameCanvas");
+        var context = canvas.getContext("2d");
+
+        var width = canvas.width;
+        var height = canvas.height;
+
+        // Set up initial game state
+        var snake = [
+            { x: 20, y: 20 }
+        ];
+        var candy = { x: 5, y: 5 };
+        var score = 0;
+        var highScore = 0;
+        var direction = "right";
+        var gameover = false;
+        var countdownValue = 3;
+        var countdownInterval;
+        var gameInterval;
+         var paused = false;
+
+        // Function to generate a random candy location
+        function generateCandy() {
+            candy.x = Math.floor(Math.random() * (width / 20));
+            candy.y = Math.floor(Math.random() * (height / 20));
+        }
+
+        // Function to draw the game on the canvas
+        function draw() {
+            // Clear the canvas
+            context.clearRect(0, 0, width, height);
+
+            // Draw the snake
+            for (var i = 0; i < snake.length; i++) {
+                var segment = snake[i];
+                context.fillStyle = "#ADE792";
+                context.fillRect(segment.x * 20, segment.y * 20, 20, 20);
+            }
+
+            // Draw the candy
+            context.fillStyle = "#FD5DA8";
+            context.fillRect(candy.x * 20, candy.y * 20, 20, 20);
+
+            // Draw "Game Over" message if gameover is true
+            if (gameover) {
+                context.fillStyle = "white";
+                context.font = "50px DotGothic16";
+                context.fillText("Game Over :(", width / 2 - 160, height / 2);
+                context.font = "25px DotGothic16";
+                context.fillText("Press Enter to Restart", width / 2 - 150, height / 2 + 40);
+            }
+
+            // Draw countdown if countdownValue is greater than zero
+            if (countdownValue > 0) {
+                context.fillStyle = "white";
+                context.font = "100px DotGothic16";
+                context.fillText(countdownValue, width / 2 - 30, height / 2);
+            }
+
+            if (paused) {
+                context.fillStyle = "white";
+                context.font = "50px DotGothic16";
+                context.fillText("Paused", width / 2 - 85, height / 2);
+            }
+        }
+
+        // Function to update the game state
+        function update() {
+            if (gameover || paused) {
+                return;
+            }
+
+            if (gameover) {
+                return;
+            }
+
+            if (countdownValue > 0) {
+                return;
+            } 
+            else {
+                // Update the snake's position based on the direction
+                var head = { x: snake[0].x, y: snake[0].y };
+                switch (direction) {
+                    case "up":
+                        head.y -= 1;
+                        break;
+                    case "down":
+                        head.y += 1;
+                        break;
+                    case "left":
+                        head.x -= 1;
+                        break;
+                    case "right":
+                        head.x += 1;
+                        break;
+            }
+
+            // Check if the snake has collided with the wall or itself
+            if (head.x < 0 || head.x >= width / 20 || head.y < 0 || head.y >= height / 20 || checkCollision(head)) {
+                // Game over
+                if (score > highScore) {
+                    highScore = score;
+                }
+                    gameover = true;
+                } 
+                else {
+                    // Check if the snake has eaten the candy
+                    if (head.x === candy.x && head.y === candy.y) {
+                        score++;
+                        snake.unshift(head);
+                        generateCandy();
+                    } else {
+                        snake.pop();
+                        snake.unshift(head);
+                    }
+                }
+                updateScore();
+            }
+        }
+
+        function updateScore() {
+            document.getElementById("score").textContent = score;
+            document.getElementById("highScore").textContent = highScore;
+        }
+
+        // Function to check if the snake has collided with itself
+        function checkCollision(head) {
+            for (var i = 1; i < snake.length; i++) {
+                if (head.x === snake[i].x && head.y === snake[i].y) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        // Function to handle key presses
+        function handleKeyPress(event) {
+            if (gameover && event.keyCode === 13) {
+                restartGame();
+            } else {
+                switch (event.keyCode) {
+                    case 37:
+                        if (direction !== "right") {
+                            direction = "left";
+                        }
+                        break;
+                    case 38:
+                        if (direction !== "down") {
+                            direction = "up";
+                        }
+                        break;
+                    case 39:
+                        if (direction !== "left") {
+                            direction = "right";
+                        }
+                        break;
+                    case 40:
+                        if (direction !== "up") {
+                            direction = "down";
+                        }
+                        break;
+                }
+            }
+        }
+
+        // Function to toggle the pause state
+      function togglePause() {
+        paused = !paused;
+      }
+
+      // Function to handle the pause button click
+      function handlePauseButtonClick() {
+        togglePause();
+
+        // Update the button text based on the pause state
+        var pauseButton = document.getElementById("pauseButton");
+        pauseButton.textContent = paused ? "Resume" : "Pause";
+      }
+
+        function restartGame() {
+            gameover = false;
+            snake = [{ x: getRandomPosition(width / 20), y: getRandomPosition(height / 20) }];
+            score = 0;
+            direction = "right";
+            generateCandy(); // Update the candy position
+            clearInterval(gameInterval); // Clear the game interval
+            clearInterval(countdownInterval); // Clear the countdown interval
+            startCountdown();
+    }
+
+        // Function to generate a random position within a given range
+        function getRandomPosition(range) {
+            return Math.floor(Math.random() * range);
+        }
+
+        // Function to start the countdown
+        function startCountdown() {
+            score = 0;
+            countdownValue = 3;
+            countdownInterval = setInterval(function () {
+        if (countdownValue === 0) {
+            clearInterval(countdownInterval);
+            startGame();
+        } 
+        else {
+            updateScore(); // Update the score display during countdown
+            draw();
+            countdownValue--;
+            }
+        }, 1000);
+    }
+
+        // Function to start the game
+        function startGame() {
+            gameInterval = setInterval(function () {
+                update();
+                draw();
+            }, 120);
+        }
+
+        // Start the game
+        generateCandy();
+        startCountdown();
+
+        // Event listener for key presses
+        document.addEventListener("keydown", handleKeyPress);
+
+        var pauseButton = document.getElementById("pauseButton");
+        pauseButton.addEventListener("click", handlePauseButtonClick);
+    </script>
+    
+</body>
+</html>
