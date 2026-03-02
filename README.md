@@ -13,8 +13,10 @@ The player controls a snake that moves around the board and grows longer each ti
 
 - Each time the snake eats food, it grows.
 
-<br>
+
 <br>
 The game ends if the snake:
+
 - Hits the wall
+
 - Collides with itself
