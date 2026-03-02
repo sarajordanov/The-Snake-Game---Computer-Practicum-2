@@ -1,1 +1,1 @@
-# The-Snake-Game---Computer-Practicum-2
+# 🐍 The Snake Game Computer Practicum 2
