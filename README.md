@@ -37,5 +37,6 @@ In this project, most of the CSS and JavaScript code is embedded directly within
 <br>
 
 # Preview Video of The Snake Game
+
 https://github.com/user-attachments/assets/4ad90cc0-960f-4697-8d87-5da1561e4005
 
