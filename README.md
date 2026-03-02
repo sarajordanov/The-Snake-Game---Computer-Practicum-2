@@ -4,7 +4,7 @@ This project was developed as part of Computer Practicum 2 during my first year 
 
 For this project, I implemented the classic Snake game entirely in vanilla JavaScript.
 
-🎮 Game Overview
+🎮 Game Overview <br>
 The player controls a snake that moves around the board and grows longer each time it eats food.
 - The snake moves continuously.
 - The player changes direction using the keyboard.
