@@ -1,4 +1,4 @@
-# The Snake Game Computer Practicum 2
+# The Snake Game (Computer Practicum 2)
 
 This project was developed as part of Computer Practicum 2 during my first year of Computer Science. The goal of the course was to practice front-end web development using HTML, CSS, and JavaScript by building interactive applications. I implemented the classic Snake game.
 
