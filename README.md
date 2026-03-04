@@ -1,10 +1,8 @@
-# 🐍 The Snake Game Computer Practicum 2
+# The Snake Game Computer Practicum 2
 
-This project was developed as part of Computer Practicum 2 during my first year of Computer Science. The goal of the course was to practice front-end web development using HTML, CSS, and JavaScript by building interactive applications.
+This project was developed as part of Computer Practicum 2 during my first year of Computer Science. The goal of the course was to practice front-end web development using HTML, CSS, and JavaScript by building interactive applications. I implemented the classic Snake game entirely in vanilla JavaScript.
 
-For this project, I implemented the classic Snake game entirely in vanilla JavaScript.
-
-<h3>Game Overview</h3>
+## Game Overview
 The player controls a snake that moves around the board and grows longer each time it eats food.
 
 - The snake moves continuously.
@@ -22,7 +20,8 @@ The game ends if the snake:
 - Collides with itself
 
 <br>
-<h4>Technologies Used</h4>
+
+### Technologies Used
 
 HTML – Structure of the game board and layout
 
