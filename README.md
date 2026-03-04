@@ -10,8 +10,6 @@ The player controls a snake that moves around the board and grows longer each ti
 - The player changes direction using the keyboard.
 
 - Each time the snake eats food, it grows.
-
-
 <br>
 The game ends if the snake:
 
@@ -23,11 +21,11 @@ The game ends if the snake:
 
 ### Technologies Used
 
-_HTML_ – Structure of the game board and layout
+HTML – Structure of the game board and layout
 
-_CSS_ – Styling and visual design
+CSS – Styling and visual design
 
-_JavaScript_ – Game logic, movement, collision detection, and score handling
+JavaScript – Game logic, movement, collision detection, and score handling
 
 
 <br>
@@ -39,7 +37,7 @@ For the visual design of the game, I created custom background images using Adob
 
 <br>
 
-# Preview Video of The Snake Game
+## Preview Video of The Snake Game
 
 https://github.com/user-attachments/assets/4ad90cc0-960f-4697-8d87-5da1561e4005
 
